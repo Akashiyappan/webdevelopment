@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>number game</title>
+    <style>
+        body{
+            background-image: url('image.jpg');
+        }
+        .center{
+            background-color: aliceblue;
+            color: black;
+            display: inline-block;
+            padding: 30px;
+            text-align: center;
+            margin-top: 130px;
+            margin-left: 560px;
+            border: 5px;
+            border-color: chocolate;
+            border-style: solid;
+
+        }
+        .two{
+            background-color: antiquewhite;
+        }
+        .f{
+            font-size: xx-large;
+            text-align: center;
+            color:aliceblue;
+            border-bottom: 15px;
+            border-style: solid;
+            border-color: rgb(244, 13, 205);
+        }
+
+    </style>
+   
+</head>
+<body>
+    <div class="f">
+        <h1 ar> GAME ZOON</h1>
+    </div>
+    <div class="center">
+        <div class="one">
+            <h1>GUESS THE  NUMBER</h1>
+            <input type="text" id="guess" placeholder="enter  number">
+            <button onclick="enter()">cheak</button>
+            
+        </div>
+        <p id="result">number right or wrong</p>
+        <p id="so">score:10</p>
+
+    </div>
+
+    <script>
+
+        var guess = document.getElementById("guess")
+        var result = document.getElementById("result")
+        var score = document.getElementById("score")
+        let y = Math.floor(Math.random() * 10 + 1);
+        tscore = 10;
+        function enter(){
+            let enternum = guess.value;
+            if(tscore > 0){
+                if(enternum == y){
+                result.innerHTML="right"
+                so.innerHTML="congratulations your score is "+ tscore
+                alert("you won the match......*")
+                so.style.color="red"
+          }
+            else{
+                result.innerHTML="wrong"
+                tscore = tscore - 1
+                so.innerHTML="score"+tscore
+            }
+
+            }
+            else{
+                so.innerHTML="play again!"
+
+            }
+
+
+        }
+    </script>  
+</body>
+</html>
