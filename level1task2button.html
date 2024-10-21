@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 50px;
+        }
+        #box{
+            background-color: blue;
+            width:100%;
+            height: 200px;
+        }
+        button{
+            width: 400px;
+            height: 50px;
+            margin-top: 20px;
+        }
+        input{
+            padding: 10px;
+            margin: 5px;
+            width: 400px ;
+
+        }
+        .cet{
+            text-align: center;
+        }
+    </style>
+    <script>
+        function myFunction() {
+          document.getElementById("box").style.backgroundColor = "red";
+        }
+       function datetime(){
+            var date = new Date();  
+            var hour = date.getHours();  
+            var minute = date.getMinutes();  
+            var second = date.getSeconds();
+            alert("time is"+hour+":"+minute+":"+second);
+       }
+       function cal(){
+        var nu1=Number(document.getElementById("num1").value)
+        var nu2=Number(document.getElementById("num2").value)
+        var an=document.getElementById("ans").innerHTML=nu1+nu2
+       }
+    </script>
+</head>
+<body>
+    <div class="cet">
+        <div id="box">
+
+        </div>
+        <div class="butt">
+            <button id="ck" onclick="myFunction()">click</button>    
+        </div>
+    </div>
+    <div class="cet">
+        <button onclick="datetime()" id="da">show date</button>
+    </div>
+    <div class="cet">
+        <h1>Calculator</h1>
+        <div>
+            <input type="number" id="num1" placeholder="number1"><br>
+            <input type="number" id="num2" placeholder="number2">
+            <p id="ans"></p>
+            <button onclick="cal()">Calculate</button>
+        </div>
+    </div>
+</body>
+</html>
