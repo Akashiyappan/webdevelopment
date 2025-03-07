@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive</title>
+    <style>
+        .navigation{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 30px;
+            padding-right: 40px;
+            background-color: rgb(188, 255, 255);
+        }
+        li{
+            display: inline-block;
+            padding-right: 10px;
+            border-left-width: 1px;
+            padding-left: 5PX;
+            border-color: black;
+            border-left-style: solid;
+        }
+        li:hover{
+            color: rgb(174, 0, 255);
+            cursor: pointer;
+        }
+        .three{
+            display: none;
+        }
+        
+        .menu{
+            
+            height: 4px;
+            width: 20px;
+            color: black;
+            background-color: rgb(0, 0, 0);
+            margin-top: 5px;
+            cursor: pointer;
+        }
+        @media screen and (max-width:600px){
+            .three{
+                display: block;
+            }
+            .navigation{
+                flex-direction: column;
+            }
+            li{
+                display: block;
+                border: 0px;
+                text-align: center;
+                margin-top: 3px;
+                margin-bottom: 3px;
+                
+            }
+            ul{
+                margin: 0px;
+                padding: 0px;
+            }
+            .three{
+                position: absolute;
+                top:30px;
+                right: 30px;
+            }
+            .logo{
+                align-self: flex-start;
+            }
+            .newone{
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navigation">
+        <div class="logo">
+            <h1>Akash Iyappan</h1>
+        </div>
+        <div class="idem">
+            <ul id="ulchange" >
+                <li>home</li>
+                <li>skill</li>
+                <li>certificate</li>
+                <li>bio-data</li>
+            </ul>
+        </div>
+        <div class="three" id="thr">
+            <div class="menu"></div>
+            <div class="menu"></div>
+            <div class="menu"></div>
+        </div>
+
+    </nav>
+    <script>
+        let menubut=document.getElementById("thr")
+        let another=document.getElementById("ulchange")
+        menubut.addEventListener('click',()=>{
+            another.classList.toggle("newone")
+        })
+    </script>
+</body>
+</html>
